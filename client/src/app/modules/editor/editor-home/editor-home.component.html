@@ -1,0 +1,238 @@
+<br>
+<div class="row">
+    <div class="col s4">
+
+        <div class="row">
+            <a class="waves-effect waves-light btn modal-trigger" href="#listeva" (click)="getEvaluadores()">
+                <i class="material-icons left">people</i
+                    >Listar evaluadores
+            </a>
+        </div>
+        <div class="row">
+            <a class="waves-effect waves-light btn modal-trigger" href="#listautors" (click)="getAuthors()">
+                <i class="material-icons left">people</i>
+                    Listar autores
+                </a>
+        </div>
+        <div class="row">
+            <a class="waves-effect waves-light btn modal-trigger" href="#credicion">
+                <i class="material-icons left">create</i>
+                    Crear nueva edición
+            </a>
+        </div>
+        <div class="row">
+            <a class="waves-effect waves-light btn modal-trigger" href="#listarti" (click)="getArticles()">
+                <i class="material-icons left">archive</i>
+                artículos Listar
+            </a>
+        </div>
+        <div class="row" hidden>
+            <a class="waves-effect waves-light btn modal-trigger" href="#estad">
+                <i class="material-icons left">pie_chart_outlined</i>
+                Estadísticas
+            </a>
+        </div>
+    </div>
+    <div class="col s8">
+
+        <h2>Hello </h2>
+        <div class="row">
+            here you manage your editor account
+        </div>
+    </div>
+
+
+    <div id="inviteva" class="modal" >
+        <div class="modal-content">
+                <div class="row">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Apellido</th>
+                                    <th>Correo</th>
+                                </tr>
+
+                            </thead>
+                            <tbody >
+                                <tr *ngFor="let eval of evaluadores let index">
+                                    <td>{{eval.fname}}</td>
+                                    <td>{{eval.flname}}</td>
+                                    <td>{{eval.email}}</td>
+                                    <td>
+                                        <button class="btn" (click)="asignarEvaluador(index)">
+                                            <i class="material-icons left">
+                                                done
+                                            </i>
+                                        </button>  
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+            
+            
+        </div>
+        <div class="modlad-footer">
+            <a  class="modal-close waves-effect waves-green btn-flat">cerrar</a>
+        </div>
+    </div>
+
+    
+    <div id="invitedi" class="modal">
+        <div class="modal-content">
+            <select>
+                <option>
+                    elija un editor
+                </option>
+                <option *ngFor="let editor of editores">
+                    {{editor.fname}}
+                </option>
+            </select>
+        </div>
+        <div class="modlad-footer">
+            <a  class="modal-close waves-effect waves-green btn-flat">cerrar</a>
+        </div>
+    </div>
+
+    <div id="listeva" class="modal">
+            <div class="modal-content">
+                    <div class="row">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Apellido</th>
+                                    <th>Correo</th>
+                                </tr>
+
+                            </thead>
+                            <tbody >
+                                <tr *ngFor="let eval of evaluadores">
+                                    <td>{{eval.fname}}</td>
+                                    <td>{{eval.flname}}</td>
+                                    <td>{{eval.email}}</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+
+            </div>
+            <div class="modlad-footer">
+                <a  class="modal-close waves-effect waves-green btn-flat">cerrar</a>
+            </div>
+   </div>
+
+   <div id="listautors" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <table>
+                    <thead>
+                      <tr>
+                          <th>Name</th>
+                          <th>Apellido</th>
+                          <th></th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                      <tr *ngFor="let autor of autores">
+                            <td>{{autor.fname}}</td>
+                            <td>{{autor.flname}}</td>
+                            <td>{{autor.email}}</td>
+                      </tr>
+                        
+
+                    </tbody>
+            </table>
+
+                
+            </div>
+        </div>
+        <div class="modlad-footer">
+            <a  class="modal-close waves-effect waves-green btn-flat">cerrar</a>
+        </div>
+    </div>
+
+    <div id="credicion" class="modal">
+            <div class="modal-content">
+
+            </div>
+            <div class="modlad-footer">
+                <a  class="modal-close waves-effect waves-green btn-flat">cerrar</a>
+            </div>
+    </div>
+
+    <div id="listarti" class="modal">
+            <div class="modal-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Nombre
+                            </th>
+                            <th>
+                                abstract
+                            </th>
+                            <th>
+                                palabras clave
+                            </th>
+                            <th>
+                                autores
+                            </th>
+                            <th>
+                                archivo
+                            </th>
+                            <th>
+                                Invitar evaluador
+
+                            </th>
+
+                        </tr>
+ 
+                      
+                    </thead>
+                    <tbody>
+                            <tr *ngFor="let articulo of articulos">
+                                    <td>
+                                       {{articulo.title}}
+                                    </td>
+                                    <td>
+                                        {{articulo.abstract}}
+                                    </td>
+                                    <td>
+                                        {{articulo.keywords}}
+                                    </td>
+                                    <td>
+                                        {{articulo.authors}}
+                                    </td>
+                                    <td>{{articulo.file}}</td>
+                                    <td>
+                                        <a class="waves-effect waves-light btn modal-trigger" href="#inviteva" (click)="getEvaluadores()">
+                                            <i class="material-icons left">assignment_ind</i>
+                                        </a>
+                                    </td>
+        
+                                </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modlad-footer">
+                <a  class="modal-close waves-effect waves-green btn-flat">cerrar</a>
+            </div>
+    </div>
+    <div id="estad" class="modal">
+            <div class="modal-content">
+
+            </div>
+            <div class="modlad-footer">
+                <a  class="modal-close waves-effect waves-green btn-flat">cerrar</a>
+            </div>
+        </div>
+
+
+</div>

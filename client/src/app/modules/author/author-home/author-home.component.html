@@ -1,0 +1,39 @@
+<br>
+<a href="/author/article/creator" class="waves-effect waves-light btn"><i class="material-icons right">add</i>Crear nuevo artículo</a>
+<table class="responsive-table z-depth-1">
+    <thead>
+        <tr>
+            <th>
+                Nombre artículo
+            </th>
+            <th>
+                Fecha de envío
+            </th>
+            <th>
+                Estado
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of articles">
+            <td>
+                {{a.title}}
+            </td>
+            <td>
+                {{a.date}}
+            </td>
+            <td>
+                {{a.state}}
+            </td>
+            <td>
+                <a href="author/article" class="waves-effect waves-teal btn-flat">Editar</a>
+                <a href="author/article/result" class="waves-effect waves-teal btn-flat">Resultados</a>
+                <a href="{{a.file}}" class="waves-effect waves-teal btn-flat">Descargar</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br>
